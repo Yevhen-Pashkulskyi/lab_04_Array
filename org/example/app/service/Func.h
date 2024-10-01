@@ -5,6 +5,9 @@ int run();
 
 int random_number(int min, int max);
 
-int *create_array(int arr[], int size);
+void array_created(int size);
+
+void *output_data(int arr[]);
+
 
 #endif
