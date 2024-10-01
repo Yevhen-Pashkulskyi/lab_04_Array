@@ -3,7 +3,7 @@
 #include <time.h>
 #include "../service/Func.h"
 
-int const MIN = 3, MAX = 8;
+int const MIN = 3, MAX = 20;
 
 int run() {
     srand(time(NULL)); // функція time передає значення в сек. для встановлення стартового значення
@@ -35,10 +35,14 @@ int run() {
     int second_size_devide = natural_number - first_size_devide;
     int *second_arr = second_array_divided(sortArray, natural_number, second_size_devide);
     print_array(second_arr, second_size_devide);
+    printf("\nfirst = %d", first_size_devide);
+    printf("\nsecond = %d", second_size_devide);
+    printf("\nsize = %d", natural_number);
+
+    printf("\n%d", counting_identical_numbers(first_arr, first_size_devide));
 
     free(array); // звільнення пам'яті яка була виділена в функції array_created
     free(first_arr);
     free(second_arr);
-    // printf("\n%d", natural_number);
     return 0;
 }

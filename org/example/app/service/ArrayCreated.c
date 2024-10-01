@@ -20,7 +20,7 @@ int *first_array_divided(int *array, int size, int first_value) {
     int *arr_first = malloc(first_value * sizeof(int));
     int j = 0;
     for (int i = 0; i < size; i++) {
-        if (i < first_value) {
+        if (i <= first_value) {
             arr_first[j] = array[i];
             j++;
         }
@@ -29,10 +29,15 @@ int *first_array_divided(int *array, int size, int first_value) {
 }
 
 int *second_array_divided(int *array, int size, int second_value) {
-    int *arr_second = malloc(second_value * sizeof(int));
+    int *arr_second = malloc((size - second_value) * sizeof(int));
     int j = 0;
-    for (int i = 0; i < size; i++) {
-        if (i >= second_value) {
+    if (size % 2) {
+        for (int i = second_value - 1; i < size; i++) {
+            arr_second[j] = array[i];
+            j++;
+        }
+    } else {
+        for (int i = second_value; i < size; i++) {
             arr_second[j] = array[i];
             j++;
         }

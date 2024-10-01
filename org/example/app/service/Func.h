@@ -15,8 +15,10 @@ int search_min_array(int *array, int size);
 
 int search_max_array(int *array, int size);
 
-int *first_array_divided(int *array,int size, int first_size);
+int *first_array_divided(int *array, int size, int first_size);
 
-int *second_array_divided(int *array,int size, int second_value);
+int *second_array_divided(int *array, int size, int second_value);
+
+int counting_identical_numbers(int *array, int size);
 
 #endif
