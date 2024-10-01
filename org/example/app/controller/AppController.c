@@ -22,6 +22,8 @@ int run() {
     print_array(array, natural_number); //функція друку масиву
     int *sortArray = sort_array(array, natural_number);
     print_array(sortArray, natural_number);
+    printf("\nmin = %d", search_min_array(array, natural_number));
+    printf("\nmax = %d", search_max_array(array, natural_number));
 
     free(array); // звільнення пам'яті яка була виділена в функції array_created
     // printf("\n%d", natural_number);

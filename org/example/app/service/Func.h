@@ -11,5 +11,8 @@ void print_array(int arr[], int size);
 
 int *sort_array(int *array, int size);
 
+int search_min_array(int *array, int size);
+
+int search_max_array(int *array, int size);
 
 #endif
