@@ -3,7 +3,7 @@
 #include <time.h>
 #include "../service/Func.h"
 
-int const MIN = 3, MAX = 20;
+const int MIN = 3, MAX = 20;
 
 int run() {
     srand(time(NULL)); // функція time передає значення в сек. для встановлення стартового значення
@@ -22,26 +22,33 @@ int run() {
 
     print_arr(array, natural_num); //функція друку масиву
 
+    //вказівник на область відсортованого масиву
     int *sortArray = sort_arr(array, natural_num);
-    print_arr(sortArray, natural_num);
+    print_arr(sortArray, natural_num); // друк відсортованого масиву
 
+    // друк мінімального і максимального значення масиву
     printf("\nmin = %d", search_min_arr(array, natural_num));
     printf("\nmax = %d\n", search_max_arr(array, natural_num));
 
-    int first_size_devide = natural_num / 2;
-    int *first_arr = first_part_arr(sortArray, natural_num, first_size_devide);
+    //розрахунок розміру першої частини загального масиву, та вивід його
+    int first_arr_size = natural_num / 2;
+    // вказівник на область пам'яті який передає новий масив, перша частина від загального
+    int *first_arr = first_part_arr(sortArray, natural_num, first_arr_size);
     printf("\nThe first part of the array = ");
-    print_arr(first_arr, first_size_devide);
+    print_arr(first_arr, first_arr_size);
 
-    int second_size_devide = natural_num - first_size_devide;
-    int *second_arr = second_part_arr(sortArray, natural_num, second_size_devide);
+    //розрахунок розміру другої частини загального масиву, та вивід його
+    int second_arr_size = natural_num - first_arr_size;
+    // вказівник на область пам'яті який передає новий масив, друга частина від загального
+    int *second_arr = second_part_arr(sortArray, natural_num, second_arr_size);
     printf("\nThe second part of the array = ");
-    print_arr(second_arr, second_size_devide);
+    print_arr(second_arr, second_arr_size);
 
+    //функція друку яка приймає значення, яке розраховано в функції для підрахунку кількості влучань
     printf("\nThe number of hits of the first half of the array = %d",
-           count_identical_nums(first_arr, first_size_devide));
+           count_identical_nums(first_arr, first_arr_size));
     printf("\nThe number of hits of the first half of the array = %d",
-           count_identical_nums(second_arr, second_size_devide));
+           count_identical_nums(second_arr, second_arr_size));
 
     // звільнення пам'яті яка була виділена в функціях
     free(array);

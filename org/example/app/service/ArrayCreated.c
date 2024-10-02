@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../service/Func.h"
-
+/**
+ * Ця функція створює масив
+ */
 int *arr_created(int size, int min, int max) {
     int *arr = malloc(size * sizeof(int));
     if (arr == NULL) {
@@ -15,6 +17,9 @@ int *arr_created(int size, int min, int max) {
     return arr;
 }
 
+/**
+ * Ця функція створює масив з першої частини загального масиву
+ */
 int *first_part_arr(int *arr, int size, int first_value) {
     int *arr_first = malloc(first_value * sizeof(int));
     int j = 0;
@@ -27,6 +32,9 @@ int *first_part_arr(int *arr, int size, int first_value) {
     return arr_first;
 }
 
+/**
+* Ця функція створю масив останні значення с загального
+ */
 int *second_part_arr(int *arr, int size, int second_val) {
     int *arr_second = malloc((size - second_val) * sizeof(int));
     int j = 0;
