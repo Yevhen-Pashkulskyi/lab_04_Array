@@ -15,7 +15,7 @@ int search_min_arr(int *arr, int size);
 
 int search_max_arr(int *arr, int size);
 
-int *first_part_arr(int *arr, int size, int first_val);
+int *first_part_arr(int *arr, int first_val);
 
 int *second_part_arr(int *arr, int size, int second_val);
 

@@ -13,17 +13,17 @@ int run() {
 
     //вказівник на область пам'яті яка приймає адресу масиву яку створює ця функція
     int *array = arr_created(natural_num, 0, 10);
-
     //умова якщо maloc не виділів пам'ять
     if (array == NULL) {
         perror("array creation failed"); //exception якщо maloc не виділів пам'яті
         return -1; //закриття програми
     }
-
+    printf("Created array:\n");
     print_arr(array, natural_num); //функція друку масиву
 
     //вказівник на область відсортованого масиву
     int *sortArray = sort_arr(array, natural_num);
+    printf("Sorted array:\n");
     print_arr(sortArray, natural_num); // друк відсортованого масиву
 
     // друк мінімального і максимального значення масиву
@@ -33,21 +33,21 @@ int run() {
     //розрахунок розміру першої частини загального масиву, та вивід його
     int first_arr_size = natural_num / 2;
     // вказівник на область пам'яті який передає новий масив, перша частина від загального
-    int *first_arr = first_part_arr(sortArray, natural_num, first_arr_size);
-    printf("\nThe first part of the array = ");
+    int *first_arr = first_part_arr(sortArray, first_arr_size);
+    printf("\nThe first part of the array:\n");
     print_arr(first_arr, first_arr_size);
 
     //розрахунок розміру другої частини загального масиву, та вивід його
     int second_arr_size = natural_num - first_arr_size;
     // вказівник на область пам'яті який передає новий масив, друга частина від загального
     int *second_arr = second_part_arr(sortArray, natural_num, second_arr_size);
-    printf("\nThe second part of the array = ");
+    printf("The second part of the array:\n");
     print_arr(second_arr, second_arr_size);
 
     //функція друку яка приймає значення, яке розраховано в функції для підрахунку кількості влучань
     printf("\nThe number of hits of the first half of the array = %d",
            count_identical_nums(first_arr, first_arr_size));
-    printf("\nThe number of hits of the first half of the array = %d",
+    printf("\nThe number of hits of the first half of the array = %d\n",
            count_identical_nums(second_arr, second_arr_size));
 
     // звільнення пам'яті яка була виділена в функціях
