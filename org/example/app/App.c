@@ -3,8 +3,7 @@
 // #define ARRAY_SIZE rand() % 10
 // #define ARRAY_LENGTH 10
 
-
 int main() {
-    run();
+    run(); // запуск програми
     return 0;
 }
