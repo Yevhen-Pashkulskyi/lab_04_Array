@@ -20,9 +20,9 @@ int *arr_created(int size, int min, int max) {
 /**
  * Ця функція створює масив з першої частини загального масиву
  */
-int *first_part_arr(int *arr, int first_value) {
-    int *arr_first = malloc(first_value * sizeof(int)); // виділення пам'яті для масиву
-    for (int i = 0; i < first_value; i++) {
+int *first_part_arr(int *arr, int first_len) {
+    int *arr_first = malloc(first_len * sizeof(int)); // виділення пам'яті для масиву
+    for (int i = 0; i < first_len; i++) {
         arr_first[i] = arr[i];
     }
     return arr_first;
@@ -31,18 +31,18 @@ int *first_part_arr(int *arr, int first_value) {
 /**
 * Ця функція створю масив останні значення с загального масиву
  */
-int *second_part_arr(int *arr, int size, int second_val) {
-    int *arr_second = malloc((size - second_val) * sizeof(int));
-    int j = 0;
-    if (size % 2) {
-        for (int i = second_val - 1; i < size; i++) {
-            arr_second[j] = arr[i];
-            j++;
+int *second_part_arr(int *arr, int len, int second_len) {
+    int *arr_second = malloc((len - second_len) * sizeof(int));
+    int index = 0;
+    if (len % 2) {
+        for (int i = second_len - 1; i < len; i++) {
+            arr_second[index] = arr[i];
+            index++;
         }
     } else {
-        for (int i = second_val; i < size; i++) {
-            arr_second[j] = arr[i];
-            j++;
+        for (int i = second_len; i < len; i++) {
+            arr_second[index] = arr[i];
+            index++;
         }
     }
     return arr_second;

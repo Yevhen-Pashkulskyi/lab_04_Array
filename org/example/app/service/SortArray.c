@@ -4,10 +4,10 @@
  * в аргументи приймає посилання на функцію яка створює масив
  * та його розмір
  */
-int *sort_arr(int *arr, int size) {
+int *sort_arr(int arr[], int len) {
     int temp; // тимчасова змінна
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size - 1; j++) {
+    for (int i = 0; i < len; i++) {
+        for (int j = 0; j < len - 1; j++) {
             // умова якщо індекс більш ніж наступний
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j]; // присвоюємо тимчасовій змінній
